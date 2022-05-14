@@ -1,5 +1,7 @@
 @import url("https://cdn.syncfusion.com/ej2/material.css");
 @import "../node_modules/@syncfusion/ej2-layouts/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-navigations/styles/material.css";
 
 body {
   margin: 0;
@@ -37,7 +39,7 @@ code {
 #maintext.main-menu-content {
   height: 800px;
   overflow: auto !important;
-  /* overflow: hidden !important; */
+  max-width: 100%;
 }
 
 #wrapper .sidebar-menu .e-menu-wrapper {
@@ -123,6 +125,10 @@ code {
 
 .sidebar-menu .icon-bell-alt:before {
   content: '\e802';
+}
+
+.sidebar-menu .icon-form:before {
+  content: '\e19c';
 }
 
 .sidebar-menu .icon-user:before {
@@ -594,4 +600,9 @@ code {
 
 .e-menu-item {
   list-style: none;
+}
+
+.e-outline.e-float-input,
+.e-outline.e-float-input.e-control-wrapper {
+    margin-top: 0;
 }

@@ -1,5 +1,5 @@
 export const PATHS = {
-  home: '/',
+  home: '/home',
   overview: 'Overview',
   allData: 'AllData',
   category2: 'Category2',
@@ -8,6 +8,7 @@ export const PATHS = {
   addName: 'AddName',
   product: 'Product',
   name: 'Name',
+  form: 'Form',
 }
 
 export enum ROLES {

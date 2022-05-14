@@ -1,5 +1,5 @@
+import { useState, useEffect } from "react"
 import Context from "./index"
-import React, { useState, useEffect } from "react"
 import axios from "axios"
 
 const UsersComponent = (props: { children: any }) => {

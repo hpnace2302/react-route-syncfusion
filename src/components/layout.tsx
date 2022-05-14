@@ -1,7 +1,7 @@
 import { SidebarComponent, ToolbarComponent, TreeViewComponent } from '@syncfusion/ej2-react-navigations';
 import { MenuComponent } from '@syncfusion/ej2-react-navigations';
-import NoticeIcon from 'ant-design-pro/lib/NoticeIcon';
-import HeaderSearch from 'ant-design-pro/lib/HeaderSearch';
+// import NoticeIcon from 'ant-design-pro/lib/NoticeIcon';
+// import HeaderSearch from 'ant-design-pro/lib/HeaderSearch';
 import 'antd/dist/antd.css';
 import 'ant-design-pro/dist/ant-design-pro.css';
 import {
@@ -16,36 +16,36 @@ const LayoutComponent = () => {
 
   const menuItems = [
     {
-      id: 1,
+      // id: 1,
       text: 'Overview',
-      iconCss: 'icon icon-user',
       url: "/Overview",
+      iconCss: 'icon icon-user',
       roles: ["admin", "user"],
       items: [
         {
-          id: 3,
+          // id: 3,
           text: 'All Data', url: "/Overview/AllData", roles: ["admin"],
         },
         {
-          id: 4,
+          // id: 4,
           text: 'Category2', url: "/Overview/Category2", roles: ["admin"],
           items: [
             {
-              id: 7,
+              // id: 7,
               text: 'Product', url: "/Overview/Category2/Product", roles: ["user"]
             }
           ]
         },
         {
-          id: 3,
+          // id: 3,
           text: 'All Data2', url: "/Overview/AllData", roles: ["admin"],
         },
         {
-          id: 4,
+          // id: 4,
           text: 'Category3', url: "/Overview/Category2", roles: ["admin"],
           items: [
             {
-              id: 7,
+              // id: 7,
               text: 'Product1', url: "/Overview/Category2/Product", roles: ["user"]
             }
           ]
@@ -53,39 +53,46 @@ const LayoutComponent = () => {
       ]
     },
     {
-      id: 2,
+      // id: 2,
       text: 'Notification',
       url: "/Notification",
       iconCss: 'icon-bell-alt icon',
       roles: ["admin", "user"],
       items: [
         {
-          id: 5,
+          // id: 5,
           text: 'Change Profile', url: "/Notification/ChangeProfile", roles: ["admin", "user"],
           items: [
             {
-              id: 8,
+              // id: 8,
               text: 'Name', url: "/Notification/ChangeProfile/Name", roles: ["user"]
             },
             {
-              id: 9,
+              // id: 9,
               text: 'Age', url: "/Notification/ChangeProfile/Age", roles: ["admin"]
             }
           ]
         },
         {
-          id: 6,
+          // id: 6,
           text: 'Add Name1', url: "/Notification/AddName", roles: ["user"]
         },
         {
-          id: 6,
+          // id: 6,
           text: 'Add Name2', url: "/Notification/AddName", roles: ["admin"]
         },
         {
-          id: 6,
+          // id: 6,
           text: 'Add Name3', url: "/Notification/AddName", roles: ["admin"]
         },
       ]
+    },
+    {
+      // id: 2,
+      text: 'Form',
+      url: "/Form",
+      iconCss: 'icon-tag icon',
+      roles: ["admin", "user"],
     },
   ];
 
@@ -122,14 +129,11 @@ const LayoutComponent = () => {
     })
   }
 
-  const enableDock = true;
-  const dockSize = '50px';
-  const width = '220px';
-  const target = '.main-menu-content';
   var sidebarobj: SidebarComponent;
 
   const toolbarCliked = (args: any) => {
-
+    console.log(args);
+    
     if (args.item.tooltipText === "Menu") {
 
       sidebarobj.toggle();
@@ -140,6 +144,7 @@ const LayoutComponent = () => {
     sidebarobj.toggle();
     setSidebar(!sidebar)
   }
+
   const handleSearch = () => {
     const inputSearch: HTMLElement = document.querySelector(".search-input") as HTMLInputElement;
     console.log(inputSearch?.classList.value);
@@ -159,7 +164,7 @@ const LayoutComponent = () => {
       // inputSearch.style.animation = "FadeIn ease-in .5s;"
     }
   }
-  // let folderEle = '<div class="e-folder"><div class="e-folder-name">Logo</div></div>';
+
   const fields = {
     dataSource: filterRoles(menuItems, userRole), child: 'items',
     id: 'text', iconCss: "iconCss", text: 'text',
@@ -169,22 +174,25 @@ const LayoutComponent = () => {
     return (
       <>
         <Link className={`${data.roles}`} to={data.url} id={data.text}>
-          <span style={{ display: 'flex' }} className="treeName">{data.text},<h6>{data.roles}</h6></span></Link>
+          <span style={{ display: 'flex' }} className="treeName">{data.text},<h6 style={{ height: '30px', lineHeight: '30px' }}>{data.roles}</h6></span></Link>
       </>
     );
   }
 
   const menuTemplate = (data: any) => {
-    return (<div>
-      <Link className={`${data.roles}`} to={data.properties.url} style={{ display: "flex", textDecoration: "none", color: "rgba(0,0,0,0.54)" }}>
-        <div
-          style={{ fontSize: "24px", minWidth: "24px", alignItems: "center", verticalAlign: "middle" }}
-          className={`${data.properties.iconCss}`}></div>
-        <div
-          style={{ paddingLeft: "14px", display: "flex" }}
-        >{data.properties.text},<h6>{data.properties.roles}</h6></div>
-      </Link>
-    </div>);
+
+    return (
+      <>
+        <Link to={data.properties.url} style={{ display: "flex", textDecoration: "none", color: "rgba(0,0,0,0.54)" }}>
+          <div
+            style={{ fontSize: "24px", minWidth: "24px", alignItems: "center", verticalAlign: "middle" }}
+            className={`${data.properties.iconCss}`}></div>
+          <div
+            style={{ paddingLeft: "14px", display: "flex" }}
+          >{data.properties.text}</div>
+        </Link>
+      </>
+    );
   }
 
   return (
@@ -194,7 +202,7 @@ const LayoutComponent = () => {
           {/* Header */}
           <ToolbarComponent
             id="menuToolbar"
-            clicked={toolbarCliked.bind(this)}
+            // clicked={toolbarCliked.bind(this)}
             style={{ borderBottom: "1px solid black", display: "flex", justifyContent: "space-between", flexWrap: "nowrap" }}
           >
             <div className="e-folder"><div className="e-folder-name"><Link to="/home">Logo</Link>{userRole}</div></div>
@@ -287,14 +295,19 @@ const LayoutComponent = () => {
             id="menuSidebar"
             className="sidebar-menu"
             ref={(Sidebar: any) => sidebarobj = Sidebar}
-            enableDock={enableDock}
-            dockSize={dockSize}
-            width={width}
-            target={target}
+            enableDock={true}
+            dockSize='50px'
+            width='220px'
+            target='.main-menu-content'
             isOpen={true}
-            type="Push">
+            enableGestures={false}
+            type="Auto"
+          >
             <div className="main-menu">
-              <div style={{ maxHeight: "700px", overflow: "auto" }}>
+              <div style={{
+                maxHeight: "700px",
+                // overflow: "auto" 
+              }}>
                 {sidebar ?
                   <MenuComponent
                     id="dockMenu"
@@ -302,14 +315,14 @@ const LayoutComponent = () => {
                     orientation='Vertical'
                     cssClass='dock-menu'
                     template={menuTemplate}
-                  >
-                  </MenuComponent> :
+                  ></MenuComponent>
+                  :
                   <TreeViewComponent
                     id='mainTree'
                     fields={fields}
                     expandOn='Click'
                     nodeTemplate={nodeTemplate}
-                  // disabled={true}
+                    fullRowNavigable={true}
                   />
                 }
               </div>
