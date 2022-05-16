@@ -89,59 +89,49 @@ function Validation() {
         <h4 className="form-title">Validation Support</h4>
         {/* <div className='validation_wrapper'>
           <div className="control_wrapper" id="control_wrapper"> */}
-            <form id="form1" method="post" style={{ width: "100%", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
-              <div className="input-item">
-                <TextBoxComponent style={{ width: "40%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0" }} type="text" id="name" placeholder="First Name" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="nameError" />
-                <div id="nameError" />
-              </div>
-              <div className="input-item">
-                <TextBoxComponent style={{ width: "40%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0" }} type="email" id="email" placeholder="Email" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="mailError" />
-                <div id="mailError" />
-              </div>
-              <div className="input-item">
-                <MaskedTextBoxComponent style={{ width: "40%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0" }} floatLabelType="Auto" id="mobile"
-                  placeholder="Mobile no" data-msg-containerid="noError" mask='000-000-0000'></MaskedTextBoxComponent>
-                <div id="noError" />
-              </div>
-              <div className="input-item">
-                <MaskedTextBoxComponent style={{ width: "40%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0" }} floatLabelType="Auto" id="dob"
-                  placeholder="Data of birth" data-msg-containerid="dobError" mask='00/00/0000'></MaskedTextBoxComponent>
-                <div id="dobError" />
-              </div>
-              <div className="input-item">
-                <TextBoxComponent style={{ width: "40%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0" }} type="password" id="password" placeholder="Password" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="passwordError" />
-                <div id="passwordError" />
-              </div>
-              <div className="input-item">
-                <ComboBoxComponent id="games"
-                  style={{
-                    width: "90%", height: "32px",
-                    borderRadius: "10px", padding: "5px 10px 1px"
-                  }}
-                  dataSource={sportsData}
-                  //  ref={(combobox) => { listObj = combobox; }}
-                  fields={fields} placeholder="Select a game" popupHeight="220px" popupWidth="245px" data-msg-containerid="selectError" />
-                <div id="selectError" />
-              </div>
-            </form>
-            <br />
-            <div className="submitBtn">
-              <button className="submit-btn e-btn" onClick={onSubmitClick} id="submit-btn">Submit</button>
-            </div>
-            <div id="confirmationDialog" /> </div>
-        {/* </div>
+        <form id="form1" method="post" style={{ width: "90%", display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+          <div className="input-item">
+            <TextBoxComponent style={{ width: "90%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0", boxSizing: "border-box" }} type="text" id="name" placeholder="First Name" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="nameError" />
+            <div id="nameError" />
+          </div>
+          <div className="input-item">
+            <TextBoxComponent style={{ width: "90%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0", boxSizing: "border-box" }} type="email" id="email" placeholder="Email" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="mailError" />
+            <div id="mailError" />
+          </div>
+          <div className="input-item">
+            <MaskedTextBoxComponent style={{ width: "90%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0", boxSizing: "border-box" }} floatLabelType="Auto" id="mobile"
+              placeholder="Mobile no" data-msg-containerid="noError" mask='000-000-0000'></MaskedTextBoxComponent>
+            <div id="noError" />
+          </div>
+          <div className="input-item">
+            <MaskedTextBoxComponent style={{ width: "90%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0", boxSizing: "border-box" }} floatLabelType="Auto" id="dob"
+              placeholder="Data of birth" data-msg-containerid="dobError" mask='00/00/0000'></MaskedTextBoxComponent>
+            <div id="dobError" />
+          </div>
+          <div className="input-item">
+            <TextBoxComponent style={{ width: "90%", border: "1px solid #c0c0c0", borderRadius: "10px", padding: "5px 10px 0", boxSizing: "border-box" }} type="password" id="password" placeholder="Password" floatLabelType="Auto" onFocus={floatFocus} onBlur={floatBlur} data-msg-containerid="passwordError" />
+            <div id="passwordError" />
+          </div>
+          <div className="input-item">
+            <ComboBoxComponent id="games"
+              style={{
+                width: "100%",
+                height: "24px",
+                borderRadius: "10px", padding: "5px 10px 1px"
+              }}
+              dataSource={sportsData}
+              //  ref={(combobox) => { listObj = combobox; }}
+              fields={fields} placeholder="Select a game" popupHeight="220px" popupWidth="245px" data-msg-containerid="selectError" />
+            <div id="selectError" />
+          </div>
+        </form>
+        <br />
+        <div className="submitBtn">
+          <button className="submit-btn e-btn" onClick={onSubmitClick} id="submit-btn">Submit</button>
+        </div>
+        <div id="confirmationDialog" /> </div>
+      {/* </div>
       </div> */}
-      {/* <DialogComponent
-              id="defaultdialog"
-              isModal={true}
-              visible={false}
-              content='Your details has been updated successfully, Thank you'
-              animationSettings={animationSettings}
-              width={'50%'}
-              ref={dialog => dialogInstance = dialog!}
-              target={'.control-section'}
-              overlayClick={onOverlayClick}
-            /> */}
     </div>);
 }
 export default Validation

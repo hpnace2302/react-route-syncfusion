@@ -168,10 +168,11 @@
 }
 
 .input-item {
-  width: 45%;
-  overflow: hidden !important;
+  width: 30%;
+  /* overflow: hidden !important; */
   margin: 0 5px;
   /* height: 40px; */
+  box-sizing: border-box;
 }
 
 #combodefault .col-lg-9 {
@@ -190,7 +191,7 @@
   margin-top: 16px;
   border: 1px solid #c0c0c0 !important;
   border-radius: 10px !important;
-  max-width: 40%;
+  max-width: 90%;
 }
 
 .e-textbox {

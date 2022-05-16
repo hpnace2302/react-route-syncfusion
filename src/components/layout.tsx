@@ -96,28 +96,6 @@ const LayoutComponent = () => {
     },
   ];
 
-  // const handleArray = (menuItems: any[]) => {
-  //   menuItems.map((item: any) => {
-  //     // console.log(1, item);
-
-  //     if (item.roles.includes(userRole)) {
-  //       if (item.items) {
-  //         handleArray(item.items)
-  //       } else {
-  //         // console.log(3, item);
-
-  //         // menuItems.splice(item, 1)
-  //       }
-  //     }
-  //     else {
-  //       // console.log(2, item);
-
-  //       // menuItems.splice(item, 1)
-  //     }
-  //     return null
-  //   })
-  // }
-
   function filterRoles(arr: any[], selectedKey: string) {
 
     return arr.filter(item => item.roles.includes(selectedKey)).map(item => {
@@ -286,7 +264,7 @@ const LayoutComponent = () => {
           </ToolbarComponent>
           {/* Content */}
           <div className="main-menu-content" id="maintext">
-            <div style={{ width: '100%' }} className="menu-content">
+            <div style={{ width: "calc(100% - 220px)" }} className="menu-content">
               <Outlet />
             </div>
           </div>
