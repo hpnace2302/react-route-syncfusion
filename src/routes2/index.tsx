@@ -8,7 +8,8 @@ import ChangeProfile from "../pages/Notification/ChangeProfile"
 import Home from "../pages/Home"
 import PrivateRoute from "./PrivateRoute"
 import Error403 from "../pages/403";
-import Form from "../pages/Form"
+import Form from "../pages/Form/Form"
+import Form2 from "../pages/Form/Form2";
 
 const Router = () => {
   return (
@@ -46,6 +47,7 @@ const Router = () => {
           </Route>
         </Route>
         <Route path={PATHS.form} element={<PrivateRoute roles={[ROLES.admin, ROLES.user]}><Form /></PrivateRoute>} />
+        <Route path={PATHS.form2} element={<PrivateRoute roles={[ROLES.admin, ROLES.user]}><Form2 /></PrivateRoute>} />
       </Route>
     </Routes >
   )

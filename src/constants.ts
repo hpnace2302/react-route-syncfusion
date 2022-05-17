@@ -9,6 +9,7 @@ export const PATHS = {
   product: 'Product',
   name: 'Name',
   form: 'Form',
+  form2: 'Form2',
 }
 
 export enum ROLES {

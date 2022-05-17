@@ -94,6 +94,13 @@ const LayoutComponent = () => {
       iconCss: 'icon-tag icon',
       roles: ["admin", "user"],
     },
+    {
+      // id: 2,
+      text: 'Form2',
+      url: "/Form2",
+      iconCss: 'icon-tag icon',
+      roles: ["admin", "user"],
+    },
   ];
 
   function filterRoles(arr: any[], selectedKey: string) {

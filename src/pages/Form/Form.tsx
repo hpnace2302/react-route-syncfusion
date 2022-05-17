@@ -129,7 +129,8 @@ function Validation() {
         <div className="submitBtn">
           <button className="submit-btn e-btn" onClick={onSubmitClick} id="submit-btn">Submit</button>
         </div>
-        <div id="confirmationDialog" /> </div>
+        {/* <div id="confirmationDialog" />  */}
+      </div>
       {/* </div>
       </div> */}
     </div>);
