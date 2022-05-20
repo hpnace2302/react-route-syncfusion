@@ -12,10 +12,6 @@ function Validation() {
   var formObject: FormValidator;
 
   var listObj = React.useRef(<ComboBoxComponent />);
-  // const temp = 'sportsData';
-  // define the JSON of data
-  // const sportsData = data[temp];
-  // maps the appropriate column to fields property
 
   const sportsData = [
     { "Id": "Game1", "Game": "American Football" },
@@ -121,7 +117,7 @@ function Validation() {
               }}
               dataSource={sportsData}
               //  ref={(combobox) => { listObj = combobox; }}
-              fields={fields} placeholder="Select a game" popupHeight="220px" popupWidth="245px" data-msg-containerid="selectError" />
+              fields={fields} placeholder="Select a game" popupHeight="220px" data-msg-containerid="selectError" />
             <div id="selectError" />
           </div>
         </form>
